@@ -1,4 +1,7 @@
 <?php require_once('config.php');  ?>
+<?php require_once(ROOT_PATH . '/includes/functions.php'); ?>
+<!--retrieve all posts from db-->
+<?php $allposts = getPublishedPosts();  ?>
 <?php require_once(ROOT_PATH . '/includes/head.php');  ?>
     <title>AlphaBlog | Home</title>
 </head>
@@ -12,7 +15,21 @@
         <div class="content">
             <h2>Recent articles</h2>
             <hr>
-            <!--more to be added here-->  
+            <!--more to be added here--> 
+            <?php foreach ($allposts as $post):?>
+                <div class="post">
+                    <img src="<?php echo BASE_URL . 'static/images/'.$post['image'];?>" class = 'post-image img-fluid' alt="">
+                    <a href="single-post.php?post-slug=<?php echo $post['slug']; ?>">
+                        <div class="post-info">
+                            <h3><?php echo $post['title'] ?></h3>
+                            <div class="info">
+                                <span><?php echo date("F j, Y ",strtotime($post['created_at']));  ?></span>
+                                <span class="read-more">Read more</span>
+                            </div>
+                        </div>
+                    </a>
+                </div> 
+            <?php endforeach; ?>
         </div><!--end of main page-->
 
         <!--footer items-->
