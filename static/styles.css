@@ -1,0 +1,19 @@
+/****************
+*******DEFAULTS
+***********/
+
+a { text-decoration: none; }
+ul, ol { margin-left: 40px; }
+hr { margin: 10px 0px; opacity: .25; }
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: white;
+  background-color: #73707D;
+  text-align: center;
+  width: 100%;
+  /*margin: 20px auto 0px;
+  padding: 20px 0px;*/
+}
