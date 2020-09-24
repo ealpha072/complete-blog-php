@@ -19,6 +19,11 @@
             <?php foreach ($allposts as $post):?>
                 <div class="post">
                     <img src="<?php echo BASE_URL . 'static/images/'.$post['image'];?>" class = 'post-image img-fluid' alt="">
+                    <?php if(isset($post['topic']['name'])):  ?>
+                        <a href="<?php echo BASE_URL . 'filtered_posts.php?topic=' . $post['topic']['id']?>" class ='btn category'>
+                           <?php echo $post['topic']['name']; ?> 
+                        </a>
+                    <?php endif; ?>    
                     <a href="single-post.php?post-slug=<?php echo $post['slug']; ?>">
                         <div class="post-info">
                             <h3><?php echo $post['title'] ?></h3>
