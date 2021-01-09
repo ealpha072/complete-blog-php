@@ -1,2 +1,2 @@
 # complete-blog-php
-A simple chat plartform made using php amd sql.
+A simple chat plartform made using php and sql.
